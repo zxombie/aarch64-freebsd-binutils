@@ -12478,14 +12478,15 @@ build_warnings="-Wall -Wdeclaration-after-statement -Wpointer-arith \
 -Wpointer-sign \
 -Wno-unused -Wunused-value -Wunused-function \
 -Wno-switch -Wno-char-subscripts -Wmissing-prototypes \
--Wdeclaration-after-statement -Wempty-body -Wmissing-parameter-type \
--Wold-style-declaration -Wold-style-definition"
+-Wdeclaration-after-statement -Wempty-body \
+-Wold-style-definition -Wno-string-plus-int \
+-Wno-unused-function -Wno-dangling-else"
 
 # Enable -Wno-format by default when using gcc on mingw since many
 # GCC versions complain about %I64.
 case "${host}" in
   *-*-mingw32*) build_warnings="$build_warnings -Wno-format" ;;
-  *) build_warnings="$build_warnings -Wformat-nonliteral" ;;
+  *) build_warnings="$build_warnings" ;;
 esac
 
 # Check whether --enable-build-warnings was given.

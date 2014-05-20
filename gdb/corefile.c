@@ -230,10 +230,10 @@ memory_error (enum target_xfer_error err, CORE_ADDR memaddr)
   switch (err)
     {
     case TARGET_XFER_E_IO:
-      err = MEMORY_ERROR;
+      err = (enum target_xfer_error)MEMORY_ERROR;
       break;
     case TARGET_XFER_E_UNAVAILABLE:
-      err = NOT_AVAILABLE_ERROR;
+      err = (enum target_xfer_error)NOT_AVAILABLE_ERROR;
       break;
     }
 

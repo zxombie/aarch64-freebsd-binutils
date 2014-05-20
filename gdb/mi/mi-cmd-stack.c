@@ -361,7 +361,7 @@ mi_cmd_stack_list_args (char *command, char **argv, int argc)
 	py_frame_low++;
 
       result = apply_frame_filter (get_current_frame (), flags,
-				   print_values, current_uiout,
+				   (py_frame_args)print_values, current_uiout,
 				   py_frame_low, frame_high);
     }
 
